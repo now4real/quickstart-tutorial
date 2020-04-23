@@ -12,7 +12,7 @@
   <div>This is the number of people who are viewing this page right now!</div>
   <p>
     <b>Context:</b><br>
-	<span id="context" style="color: #39aae1; font-size: 1.2rem"></span>
+    <span id="context" style="color: #39aae1; font-size: 1.2rem"></span>
   </p>
 
 <script>
@@ -21,7 +21,7 @@
 
     now4real.subscribe('COUNTER_PAGE_VIEWERS', function (counterUpdate) {
       let updatedValue = counterUpdate.data.value;
-	  counterEl.innerText = updatedValue;
+    counterEl.innerText = updatedValue;
     });
   }
 
