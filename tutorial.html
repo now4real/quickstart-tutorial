@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tutorial: real-time presence counter</title>
+</head>
+<body>
+  <h1>Real-time presence counter</h1>
+  <div id="counter" style="color: #39aae1; font-size: 3rem; font-weight: bold">
+    -
+  </div>
+  <div>This is the number of people who are viewing this page right now!</div>
+  <p>
+    <b>Context:</b><br>
+	<span id="context" style="color: #39aae1; font-size: 1.2rem"></span>
+  </p>
+
+<script>
+  function subscribeCounter () {
+    const counterEl = document.getElementById('counter');
+
+    now4real.subscribe('COUNTER_PAGE_VIEWERS', function (counterUpdate) {
+      let updatedValue = counterUpdate.data.value;
+	  counterEl.innerText = updatedValue;
+    });
+  }
+
+  function showContext () {
+    let context = now4real.siteContext + now4real.pageContext;
+    document.getElementById('context').innerText = context;
+  }
+  
+  window.now4real = window.now4real || {};
+  now4real.config = {
+    target: 'api'
+  };
+  now4real.onload = function () {
+    console.log('Now4real loaded');
+    subscribeCounter();
+    showContext();
+  };
+  (function () { var n4r = document.createElement('script'); n4r.type = 'text/javascript'; n4r.async = true; n4r.src = 'https://cdn.now4real.com/now4real.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(n4r, s); })();
+</script>
+</body>
+</html>
