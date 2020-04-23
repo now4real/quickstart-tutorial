@@ -1,6 +1,8 @@
 # Now4real Quickstart Tutorial
 
-This project contains the source code of the basic html page created as part of the Now4real tutorial, available at https://now4real.com/quickstart/
+This repository contains the source code of the basic html page created as part of the Now4real tutorial, available at https://now4real.com/quickstart/
+
+The page displays the real-time counter of people currently viewing the page (that is, with that page displayed in a browser in a foreground tab).
 
 Below is a screenshot of what you can expect when opening the tutorial.html file locally:
 <img src="./tutorial.png" width="550"/>
